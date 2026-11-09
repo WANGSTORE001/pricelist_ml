@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💎 Diamond ML Pricelist</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0b1a30, #1a2f50, #0b1a30);
+  color: #fff;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #142542;
+  border-radius: 16px;
+  box-shadow: 0 0 25px #4a88ff50;
+  overflow: hidden;
+}
+
+/* Banner */
+.banner-wrap {
+  position: relative;
+  height: 320px;
+  background: linear-gradient(135deg, #0f2850, #3b70b8, #0f2850);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.scanline {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.08) 2px,
+    transparent 4px
+  );
+  animation: scanMove 4s linear infinite;
+  z-index: 1;
+}
+
+@keyframes scanMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(120px); }
+}
+
+.noise {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='256' height='256' viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+  animation: noiseFlicker 0.2s infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes noiseFlicker {
+  0%,100% { opacity:0.08; }
+  50% { opacity:0.15; }
+}
+
+.star-random {
+  position: absolute;
+  font-size: 18px;
+  color: #87ceff;
+  text-shadow: 0 0 14px #4a88ff;
+  z-index: 2;
+  animation: starAnim 2.2s ease forwards;
+}
+
+@keyframes starAnim {
+  0% { opacity:0; transform:scale(0.5); }
+  30% { opacity:1; transform:scale(1.2); }
+  100% { opacity:0; transform:scale(0.3); }
+}
+
+.banner-text {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+}
+
+.banner-text h1 {
+  font-size: clamp(2rem,5vw,3rem);
+  color: #4ac8ff;
+  text-shadow: 0 0 8px #4ac8ff, 0 0 16px #3b70b8;
+  animation: blinkNeon 1.2s alternate infinite;
+}
+
+.banner-text p {
+  font-size:1.1rem;
+  color: #b8e4ff;
+  margin-top:10px;
+  animation: blinkSlow 2s alternate infinite;
+}
+
+@keyframes blinkNeon {
+  0% { opacity:0.8; text-shadow:0 0 8px #4ac8ff; }
+  100% { opacity:1; text-shadow:0 0 22px #3b70b8; }
+}
+
+@keyframes blinkSlow {
+  0% { opacity:0.7; }
+  100% { opacity:1; }
+}
+
+.content {
+  padding:30px;
+}
+
+h2 {
+  text-align:center;
+  color:#6ab4ff;
+  margin-bottom:24px;
+}
+
+h3 {
+  margin:28px 0 14px;
+  color:#b8e4ff;
+  border-bottom:1px solid #3b70b8;
+  padding-bottom:8px;
+}
+
+/* Grid Card Style */
+.grid-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap:14px;
+  margin:16px 0;
+}
+
+.card {
+  background:#1f3560;
+  border:1px solid #3b70b8;
+  border-radius:12px;
+  padding:14px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.card:hover {
+  background:#2a4878;
+  transform: translateY(-4px);
+  box-shadow:0 8px 16px #4a88ff40;
+}
+
+.card .nama {
+  font-weight:bold;
+  color:#fff;
+  margin-bottom:8px;
+}
+
+.card .bonus {
+  font-size:0.85rem;
+  color:#87ceff;
+  margin-bottom:8px;
+}
+
+.card .harga {
+  font-weight:bold;
+  color:#ffd66b;
+}
+
+.note {
+  background:#1a3055;
+  padding:16px;
+  border-radius:10px;
+  margin:24px 0;
+  color:#ffd66b;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="banner-wrap" id="bannerWrap">
+    <div class="scanline"></div>
+    <div class="noise"></div>
+    <div class="banner-text">
+      <h1>💎 DIAMOND ML PRICELIST</h1>
+      <p>PRICELIST LENGKAP DIAMOND + WEEKLY PASS</p>
+    </div>
+  </div>
+
+  <div class="content">
+    <h2>📋 Pricelist Mobile Legends</h2>
+    <div class="note">
+      ⚠️ Ini adalah demonstrasi desain saja — BUKAN layanan resmi Moonton
+    </div>
+
+    <h3>💎 Diamond (urutan terkecil ke terbesar)</h3>
+    <div class="grid-wrap">
+      <div class="card"><div class="nama">5 Diamond</div><div class="bonus"></div><div class="harga">Rp 1.583</div></div>
+      <div class="card"><div class="nama">10 Diamond</div><div class="bonus">9 + 1 Bonus</div><div class="harga">Rp 3.166</div></div>
+      <div class="card"><div class="nama">12 Diamond</div><div class="bonus">11 + 1 Bonus</div><div class="harga">Rp 3.836</div></div>
+      <div class="card"><div class="nama">18 Diamond</div><div class="bonus">17 + 1 Bonus</div><div class="harga">Rp 6.022</div></div>
+      <div class="card"><div class="nama">19 Diamond</div><div class="bonus">17 + 2 Bonus</div><div class="harga">Rp 5.976</div></div>
+      <div class="card"><div class="nama">28 Diamond</div><div class="bonus">25 + 3 Bonus</div><div class="harga">Rp 8.760</div></div>
+      <div class="card"><div class="nama">36 Diamond</div><div class="bonus">33 + 3 Bonus</div><div class="harga">Rp 11.433</div></div>
+      <div class="card"><div class="nama">44 Diamond</div><div class="bonus">40 + 4 Bonus</div><div class="harga">Rp 13.075</div></div>
+      <div class="card"><div class="nama">46 Diamond</div><div class="bonus">42 + 4 Bonus</div><div class="harga">Rp 14.694</div></div>
+      <div class="card"><div class="nama">54 Diamond</div><div class="bonus">50 + 4 Bonus</div><div class="harga">Rp 16.336</div></div>
+      <div class="card"><div class="nama">59 Diamond</div><div class="bonus">53 + 6 Bonus</div><div class="harga">Rp 17.449</div></div>
+      <div class="card"><div class="nama">71 Diamond</div><div class="bonus">64 + 7 Bonus</div><div class="harga">Rp 21.285</div></div>
+      <div class="card"><div class="nama">74 Diamond</div><div class="bonus">67 + 7 Bonus</div><div class="harga">Rp 22.331</div></div>
+      <div class="card"><div class="nama">85 Diamond</div><div class="bonus">77 + 8 Bonus</div><div class="harga">Rp 25.087</div></div>
+      <div class="card"><div class="nama">90 Diamond</div><div class="bonus">82 + 8 Bonus</div><div class="harga">Rp 26.717</div></div>
+      <div class="card"><div class="nama">110 Diamond</div><div class="bonus">100 + 10 Bonus</div><div class="harga">Rp 33.764</div></div>
+      <div class="card"><div class="nama">113 Diamond</div><div class="bonus">102 + 11 Bonus</div><div class="harga">Rp 33.847</div></div>
+      <div class="card"><div class="nama">128 Diamond</div><div class="bonus">117 + 11 Bonus</div><div class="harga">Rp 38.162</div></div>
+      <div class="card"><div class="nama">148 Diamond</div><div class="bonus">134 + 14 Bonus</div><div class="harga">Rp 44.138</div></div>
+      <div class="card"><div class="nama">170 Diamond</div><div class="bonus">154 + 16 Bonus</div><div class="harga">Rp 50.164</div></div>
+      <div class="card"><div class="nama">184 Diamond</div><div class="bonus">167 + 17 Bonus</div><div class="harga">Rp 55.056</div></div>
+      <div class="card"><div class="nama">224 Diamond</div><div class="bonus">202 + 22 Bonus</div><div class="harga">Rp 66.500</div></div>
+      <div class="card"><div class="nama">240 Diamond</div><div class="bonus">217 + 23 Bonus</div><div class="harga">Rp 70.865</div></div>
+      <div class="card"><div class="nama">258 Diamond</div><div class="bonus">233 + 25 Bonus</div><div class="harga">Rp 76.887</div></div>
+      <div class="card"><div class="nama">277 Diamond</div><div class="bonus">250 + 27 Bonus</div><div class="harga">Rp 82.864</div></div>
+      <div class="card"><div class="nama">284 Diamond</div><div class="bonus">257 + 27 Bonus</div><div class="harga">Rp 83.940</div></div>
+      <div class="card"><div class="nama">296 Diamond</div><div class="bonus">256 + 40 Bonus</div><div class="harga">Rp 87.207</div></div>
+      <div class="card"><div class="nama">301 Diamond</div><div class="bonus">261 + 40 Bonus</div><div class="harga">Rp 88.838</div></div>
+      <div class="card"><div class="nama">335 Diamond</div><div class="bonus">304 + 31 Bonus</div><div class="harga">Rp 99.213</div></div>
+      <div class="card"><div class="nama">358 Diamond</div><div class="bonus">322 + 34 Bonus</div><div class="harga">Rp 106.342</div></div>
+      <div class="card"><div class="nama">370 Diamond</div><div class="bonus">333 + 37 Bonus</div><div class="harga">Rp 109.538</div></div>
+      <div class="card"><div class="nama">386 Diamond</div><div class="bonus">348 + 38 Bonus</div><div class="harga">Rp 113.924</div></div>
+      <div class="card"><div class="nama">408 Diamond</div><div class="bonus">367 + 41 Bonus</div><div class="harga">Rp 119.953</div></div>
+      <div class="card"><div class="nama">425 Diamond</div><div class="bonus">384 + 41 Bonus</div><div class="harga">Rp 125.419</div></div>
+      <div class="card"><div class="nama">452 Diamond</div><div class="bonus">407 + 45 Bonus</div><div class="harga">Rp 133.028</div></div>
+      <div class="card"><div class="nama">522 Diamond</div><div class="bonus">471 + 51 Bonus</div><div class="harga">Rp 154.276</div></div>
+      <div class="card"><div class="nama">568 Diamond</div><div class="bonus">503 + 65 Bonus</div><div class="harga">Rp 163.565</div></div>
+      <div class="card"><div class="nama">601 Diamond</div><div class="bonus">533 + 68 Bonus</div><div class="harga">Rp 173.956</div></div>
+      <div class="card"><div class="nama">642 Diamond</div><div class="bonus">570 + 72 Bonus</div><div class="harga">Rp 185.896</div></div>
+      <div class="card"><div class="nama">716 Diamond</div><div class="bonus">637 + 79 Bonus</div><div class="harga">Rp 207.703</div></div>
+      <div class="card"><div class="nama">758 Diamond</div><div class="bonus">675 + 83 Bonus</div><div class="harga">Rp 220.251</div></div>
+      <div class="card"><div class="nama">792 Diamond</div><div class="bonus">705 + 87 Bonus</div><div class="harga">Rp 230.065</div></div>
+      <div class="card"><div class="nama">845 Diamond</div><div class="bonus">753 + 92 Bonus</div><div class="harga">Rp 246.429</div></div>
+      <div class="card"><div class="nama">875 Diamond</div><div class="bonus">774 + 101 Bonus</div><div class="harga">Rp 250.703</div></div>
+      <div class="card"><div class="nama">938 Diamond</div><div class="bonus">836 + 102 Bonus</div><div class="harga">Rp 269.754</div></div>
+      <div class="card"><div class="nama">970 Diamond</div><div class="bonus">840 + 130 Bonus</div><div class="harga">Rp 279.051</div></div>
+      <div class="card"><div class="nama">1045 Diamond</div><div class="bonus">928 + 117 Bonus</div><div class="harga">Rp 300.867</div></div>
+      <div class="card"><div class="nama">1138 Diamond</div><div class="bonus">1008 + 130 Bonus</div><div class="harga">Rp 329.221</div></div>
+      <div class="card"><div class="nama">1159 Diamond</div><div class="bonus">1028 + 131 Bonus</div><div class="harga">Rp 334.643</div></div>
+      <div class="card"><div class="nama">1443 Diamond</div><div class="bonus">1277 + 166 Bonus</div><div class="harga">Rp 414.268</div></div>
+      <div class="card"><div class="nama">1506 Diamond</div><div class="bonus">1339 + 167 Bonus</div><div class="harga">Rp 433.319</div></div>
+      <div class="card"><div class="nama">1706 Diamond</div><div class="bonus">1511 + 195 Bonus</div><div class="harga">Rp 492.786</div></div>
+      <div class="card"><div class="nama">2010 Diamond</div><div class="bonus">1708 + 302 Bonus</div><div class="harga">Rp 545.062</div></div>
+      <div class="card"><div class="nama">2234 Diamond</div><div class="bonus">1910 + 324 Bonus</div><div class="harga">Rp 611.561</div></div>
+      <div class="card"><div class="nama">2380 Diamond</div><div class="bonus">2041 + 339 Bonus</div><div class="harga">Rp 654.088</div></div>
+      <div class="card"><div class="nama">2578 Diamond</div><div class="bonus">2211 + 367 Bonus</div><div class="harga">Rp 708.627</div></div>
+      <div class="card"><div class="nama">2627 Diamond</div><div class="bonus">2255 + 372 Bonus</div><div class="harga">Rp 723.332</div></div>
+      <div class="card"><div class="nama">3453 Diamond</div><div class="bonus">2985 + 468 Bonus</div><div class="harga">Rp 959.330</div></div>
+      <div class="card"><div class="nama">3737 Diamond</div><div class="bonus">3246 + 491 Bonus</div><div class="harga">Rp 1.043.269</div></div>
+      <div class="card"><div class="nama">4020 Diamond</div><div class="bonus">3416 + 604 Bonus</div><div class="harga">Rp 1.090.123</div></div>
+      <div class="card"><div class="nama">4588 Diamond</div><div class="bonus">3919 + 669 Bonus</div><div class="harga">Rp 1.253.688</div></div>
+      <div class="card"><div class="nama">4830 Diamond</div><div class="bonus">4003 + 827 Bonus</div><div class="harga">Rp 1.307.778</div></div>
+      <div class="card"><div class="nama">5398 Diamond</div><div class="bonus">4506 + 892 Bonus</div><div class="harga">Rp 1.471.343</div></div>
+      <div class="card"><div class="nama">6030 Diamond</div><div class="bonus">5124 + 906 Bonus</div><div class="harga">Rp 1.635.185</div></div>
+      <div class="card"><div class="nama">6840 Diamond</div><div class="bonus">5711 + 1129 Bonus</div><div class="harga">Rp 1.852.839</div></div>
+      <div class="card"><div class="nama">8040 Diamond</div><div class="bonus">6832 + 1208 Bonus</div><div class="harga">Rp 2.180.246</div></div>
+      <div class="card"><div class="nama">9660 Diamond</div><div class="bonus">8006 + 1654 Bonus</div><div class="harga">Rp 2.615.555</div></div>
+      <div class="card"><div class="nama">10050 Diamond</div><div class="bonus">8540 + 1510 Bonus</div><div class="harga">Rp 2.725.308</div></div>
+      <div class="card"><div class="nama">14490 Diamond</div><div class="bonus">12009 + 2481 Bonus</div><div class="harga">Rp 3.923.333</div></div>
+      <div class="card"><div class="nama">16080 Diamond</div><div class="bonus">13664 + 2416 Bonus</div><div class="harga">Rp 4.360.493</div></div>
+      <div class="card"><div class="nama">18090 Diamond</div><div class="bonus">15372 + 2718 Bonus</div><div class="harga">Rp 4.905.554</div></div>
+      <div class="card"><div class="nama">19320 Diamond</div><div class="bonus">16012 + 3308 Bonus</div><div class="harga">Rp 5.231.110</div></div>
+      <div class="card"><div class="nama">20100 Diamond</div><div class="bonus">17080 + 3020 Bonus</div><div class="harga">Rp 5.450.616</div></div>
+      <div class="card"><div class="nama">21330 Diamond</div><div class="bonus">17720 + 3610 Bonus</div><div class="harga">Rp 5.776.172</div></div>
+      <div class="nama">23340 Diamond</div><div class="bonus">19428 + 3912 Bonus</div><div class="harga">Rp 6.322.666</div></div>
+      <div class="card"><div class="nama">26670 Diamond</div><div class="bonus">22300 + 4370 Bonus</div><div class="harga">Rp 7.231.999</div></div>
+      <div class="card"><div class="nama">30000 Diamond</div><div class="bonus">25000 + 5000 Bonus</div><div class="harga">Rp 8.141.333</div></div>
+    </div>
+
+    <h3>🎫 Weekly Pass</h3>
+    <div class="grid-wrap">
+      <div class="card"><div class="nama">Weekly Pass</div><div class="bonus">7 Hari</div><div class="harga">Rp 35.000</div></div>
+      <div class="card"><div class="nama">Weekly Pass x3</div><div class="bonus">21 Hari</div><div class="harga">Rp 95.000</div></div>
+      <div class="card"><div class="nama">Weekly Pass x5</div><div class="bonus">35 Hari</div><div class="harga">Rp 150.000</div></div>
+    </div>
+
+    <h3>💸 Metode Pembayaran</h3>
+    <div class="grid-wrap">
+      <div class="card"><div class="nama">DANA</div><div class="bonus">Transfer ke nomor yang dikonfirmasi</div><div class="harga">-</div></div>
+      <div class="card"><div class="nama">QRIS</div><div class="bonus">Scan QR resmi</div><div class="harga">-</div></div>
+      <div class="card"><div class="nama">PayPal</div><div class="bonus">USD</div><div class="harga">-</div></div>
+      <div class="card"><div class="nama">Crypto</div><div class="bonus">Berbagai jaringan</div><div class="harga">-</div></div>
+    </div>
+
+    <div class="note">
+      📌 Semua harga adalah contoh saja — ubah sesuai harga yang kamu inginkan
+    </div>
+  </div>
+</div>
+
+<script>
+const bannerWrap = document.getElementById('bannerWrap');
+
+function buatBintang() {
+  const star = document.createElement('div');
+  star.className = 'star-random';
+  star.innerText = '✦';
+
+  let top;
+  if(Math.random() > 0.5){
+    top = Math.random() * 30;
+  }else{
+    top = 70 + Math.random() * 25;
+  }
+  const left = Math.random() * 92;
+
+  star.style.left = left + '%';
+  star.style.top = top + '%';
+
+  bannerWrap.appendChild(star);
+
+  setTimeout(() => {
+    star.remove();
+  }, 2200);
+}
+
+setInterval(buatBintang, 180);
+</script>
+
+</body>
+</html>
+
